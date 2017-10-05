@@ -1,0 +1,25 @@
+<agm-map [latitude]="lat" [longitude]="lng">
+    <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+  </agm-map>
+<hr />
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <h2>Lugares Cercanos</h2>
+      <ul class="list-group">
+        <ng-container *ngFor="let lugar of lugares">
+            <a routerLink="/detalle/{{lugar.id}}" [queryParams]="{action:'view', referer:'google'}"><li *ngIf="lugar.active" class="list-group-item">{{lugar.nombre}}</li></a>
+        </ng-container>
+      </ul>
+    </div>
+    <div class="col-md-4">
+      <h2>Destacados</h2>
+      <tag-input [ngModel]="['@item']"
+      [onlyFromAutocomplete]="true">
+<tag-input-dropdown [showDropdownIfEmpty]="true"
+                   [autocompleteItems]="['iTem1', 'item2', 'item3']">
+</tag-input-dropdown>
+</tag-input>
+    </div>
+  </div>
+</div>
