@@ -3,12 +3,21 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
+import { AgmCoreModule } from '@agm/core';
+import { ResaltarDirective } from './directives/resaltar.directive';
+import { ContarClicksDirective } from './directives/contar-clicks.directive';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ResaltarDirective,
+    ContarClicksDirective
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyAFiFv0LidHM-RXPpSoBdGFBkj1-iBMgc8'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
